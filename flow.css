@@ -1,0 +1,31 @@
+.flow{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1.15fr) 28px minmax(0,.85fr);align-items:stretch;border-top:1px solid #cfd6cc;border-bottom:1px solid var(--line);padding:32px 0 22px;gap:18px;margin:0 0 32px}.flow-step{min-width:0;display:flex;flex-direction:column}.flow-step small{font-size:10px;letter-spacing:.13em;color:#91988b;display:block;margin-bottom:14px}.flow-step h2{font-size:20px;font-weight:600;letter-spacing:-.04em;margin:0 0 5px}.flow-step p{font-size:13px;color:#858b7f;margin:0}.flow-visual{height:216px;padding-top:24px;margin-top:auto;flex:none}.flow-arrow{align-self:end;height:192px;display:flex;align-items:center;color:#b3bab3}.flow-arrow svg{width:100%;height:100%;overflow:visible}.mixture-spectrum{display:flex;flex-direction:column;justify-content:center;color:#7b838b}.mixture-spectrum .spectrum{height:100px}.spectrum{width:100%;height:40px;overflow:visible}.spectrum-axis{stroke:#e0e5df;stroke-width:1;vector-effect:non-scaling-stroke}.spectrum-line{stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.spectrum-caption{display:flex;justify-content:space-between;font-size:10px;color:#989f95;margin-top:9px;letter-spacing:0}.instrument-spectra,.stem-files{display:grid;grid-template-rows:repeat(3,64px)}.instrument-spectrum{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:center;gap:10px;border-bottom:1px solid #eff1ed}.instrument-spectrum:last-child,.stem-file:last-child{border-bottom:0}.instrument-name{font-size:12px;font-weight:500;white-space:nowrap}.violin{color:var(--violin)}.cello{color:var(--cello)}.flute{color:var(--flute)}.stem-file{display:flex;align-items:center;gap:10px;border-bottom:1px solid #eff1ed;font-size:13px;letter-spacing:0}.stem-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex:none}.stem-name{color:#50594f}.stem-name span{color:#a0a69c}.flow-caption{grid-column:1/-1;text-align:right;font-size:10px;letter-spacing:0;color:#969d92;margin-top:1px}
+/* Restore the original spectrum diagram within the compact site layout. */
+.flow{margin-left:0;margin-right:0}.flow-step svg{display:block;flex:none}.flow-step h2{line-height:1.5}.flow-arrow svg{display:block}.flow-caption{line-height:1.8}
+@media(max-width:1100px){.flow{gap:12px;grid-template-columns:minmax(0,1fr) 24px minmax(0,1.15fr) 20px minmax(0,.85fr)}.instrument-spectrum{grid-template-columns:48px minmax(0,1fr);gap:8px}.flow-step h2{font-size:17px}}
+@media(max-width:760px){.flow{grid-template-columns:1fr;gap:17px;padding:25px 0 20px;margin-bottom:24px}.flow-step small{margin-bottom:8px}.flow-step h2{font-size:18px}.flow-step p{font-size:12px}.flow-arrow{align-self:auto;height:24px;width:20px;margin:0;color:#aab2a6}.flow-arrow svg{display:none}.flow-arrow:after{content:"↓";font-size:23px}.flow-visual{height:204px;padding-top:12px;margin-top:0}.mixture-spectrum{height:142px;max-width:360px}.instrument-spectrum{grid-template-columns:60px minmax(0,1fr);gap:16px}.instrument-name{font-size:12px}.stem-file{font-size:14px}.flow-caption{text-align:left;margin-top:4px;font-size:10px}}
+
+/* The overview uses surface and spacing instead of horizontal separators. */
+.flow{
+ border:0;border-radius:10px;
+ background:#fff;
+ padding:30px 28px 22px;margin-bottom:34px;
+}
+.flow-step small{color:var(--accent);font-weight:600;letter-spacing:.12em}
+.instrument-spectrum,.stem-file{border-bottom:0}
+.spectrum-axis{stroke:#dce6e6}
+.overview-facts{display:grid;grid-template-columns:1fr 1fr;gap:36px;border:0;margin:0;padding:2px 6px 12px}
+.overview-facts>div{display:block;border:0;padding:0}
+.overview-facts dt{font-size:12px;color:var(--accent);margin-bottom:10px}
+.overview-facts dd{font-size:14px;line-height:1.9;max-width:48ch}
+@media(max-width:1100px){.flow{padding:26px 22px 20px}.overview-facts{gap:26px}}
+@media(max-width:760px){
+ .flow{padding:24px 20px 20px;border-radius:8px;margin-bottom:32px}
+ .overview-facts{grid-template-columns:1fr;gap:22px;padding:0 2px 6px}
+ .overview-facts dt{margin-bottom:6px}.overview-facts dd{font-size:13px}
+}
+
+/* Match the diagram to the warm score-paper background. */
+body.overview-page{--relief-surface:#fff;background:#fff}
+.overview-page .page-head{margin-bottom:48px}
+.overview-page .flow{margin-bottom:64px}
+@media(max-width:760px){.overview-page .page-head{margin-bottom:40px}.overview-page .flow{margin-bottom:54px}}
