@@ -1,0 +1,31 @@
+name: Deploy Ensemble
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-ensemble
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux, x64]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish
+        run: |
+          test -f index.html
+          rsync -rlt --chmod=D755,F644 \
+            --include='/assets/***' \
+            --include='/*.html' \
+            --include='/*.css' \
+            --include='/*.js' \
+            --include='/favicon.*' \
+            --exclude='*' \
+            ./ /var/www/chopss.kr/ensemble/
